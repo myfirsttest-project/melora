@@ -1,0 +1,130 @@
+/* Wrapper */
+.contact-wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Comic Neue', 'Comic Sans MS', Arial, sans-serif;
+    color: #333;
+    background: #fff5f5;
+}
+
+/* HeroImage Section */
+.contact-hero {
+    text-align: center;
+    background: linear-gradient(135deg, #FF6B81, #FFD97D);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    color: red;
+}
+.admission-hero h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #e53935;
+}
+
+.contact-hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Contact Content Section */
+.contact-content {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 250px;
+    background: #FFF0F0;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-info h3 {
+    color: #FF6B81;
+    margin-bottom: 1rem;
+}
+
+/* Form Section */
+.contact-form {
+    flex: 2;
+    min-width: 300px;
+    background: #FFF0F0;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 0.25rem;
+}
+
+.contact-form fieldset {
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.contact-form fieldset label {
+    margin-right: 1rem;
+    font-weight: normal;
+}
+
+.contact-button {
+    background: #FF4D4D;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-button:hover {
+    background: #E63939;
+}
+
+/* Map Section */
+.contact-map {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.map-placeholder {
+    height: 300px;
+    background: #FFE5E5;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FF6B81;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+}

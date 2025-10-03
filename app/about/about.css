@@ -1,0 +1,201 @@
+/* ==========================
+   Wrapper
+========================== */
+.about-wrapper {
+    font-family: 'Comic Neue', 'Comic Sans MS', Arial, sans-serif;
+    color: #333;
+    background: #FFF4E1; /* soft cream */
+}
+
+
+/* ==========================
+   About & Vision Section
+========================== */
+.section-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 1rem;
+    background: #fff; /* elegant white */
+    border-radius: 15px;
+}
+
+.section-box-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .section-horizontal,
+    .section-box-wrapper {
+        flex-direction: row;
+    }
+}
+
+.section-box {
+    flex: 1 1 48%;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background: #fff; /* elegant white card */
+}
+
+.section-title.blue { color: #e53935; } /* brand red */
+.section-title.green { color: #FFB347; } /* soft accent */
+
+.section-text,
+.section-text ul,
+.section-text li {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.section-text ul {
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+.section-text li { margin-bottom: 0.5rem; }
+
+/* ==========================
+   Founder Section
+========================== */
+.section-founder {
+    background: #fff; /* white, remove gradient */
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.founder-card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1100px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .founder-card {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.founder-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.founder-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.founder-details {
+    flex: 2;
+    padding: 0 1rem;
+}
+
+
+/* ==========================
+   Buttons & Links
+========================== */
+.about-wrapper a,
+.about-wrapper .cta-button,
+.apply-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #FF6B81, #FFC75D); /* accent gradient */
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.about-wrapper a:hover,
+.about-wrapper .cta-button:hover,
+.apply-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.about-wrapper a.inline-link {
+    background: none;
+    color: #e53935; /* brand red */
+    padding: 0;
+    border-radius: 0;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.about-wrapper a.inline-link:hover {
+    color: #e53935; /* soft accent */
+}
+
+/* ==========================
+   Responsive
+========================== */
+@media (max-width: 768px) {
+    .section-box { flex: 1 1 100%; }
+    .founder-card { flex-direction: column; align-items: center; }
+    .founder-image img { max-width: 300px; }
+    .founder-details { padding: 0; text-align: left; }
+}
+/* Main Section Image */
+.main-section-image {
+    margin-bottom: .05rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.main-section-image img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 330px;
+}
+
+/* Section Boxes */
+.section-box-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .section-box-wrapper {
+        flex-direction: row;
+    }
+    .section-box {
+        flex: 1 1 48%;
+    }
+}
+
+.section-box {
+    background: #fff;
+    padding: 0.0rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}

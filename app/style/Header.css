@@ -1,0 +1,74 @@
+/* Header */
+.header {
+    background-color:white; /* soft cheerful yellow-orange */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333; /* dark text for readability */
+    padding: 5px 30px;
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    z-index: 1000;
+    border-bottom: 4px solid #ff6f61; /* slightly darker yellow border */
+}
+
+/* Logo */
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e53935; /* bright red logo for contrast */
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+}
+
+.nav-links li a {
+    color: #333; /* dark links for readability */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #e53935; /* red hover for playful interaction */
+    transform: scale(1.1);
+}
+
+/* Hamburger toggle (hidden on desktop) */
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #e53935; /* matches logo */
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        background-color: #FFECB3; /* lighter yellow for mobile menu */
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        display: none;
+        padding: 20px;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}

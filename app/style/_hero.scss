@@ -1,0 +1,19 @@
+.hero {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #ffb3b3, #ffe5cc);
+  color: $primary-red;
+
+  h2, h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+}

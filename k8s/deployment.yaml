@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: melora-kindergarten
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: melora-kindergarten
+  template:
+    metadata:
+      labels:
+        app: melora-kindergarten
+    spec:
+      containers:
+        - name: melora-kindergarten
+          image: melora-kindergarten:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: "production"

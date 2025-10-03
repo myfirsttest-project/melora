@@ -1,0 +1,35 @@
+h2, .section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $primary-red;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: $font-family;
+}
+
+h3, .subsection-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $secondary-red;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-family: $font-family;
+}
+
+h3, .subsection-title-centre {
+  text-align: center;
+}
+
+h4, .mini-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: $tertiary-red;
+  margin-bottom: 0.8rem;
+  font-family: $font-family;
+}
+
+p {
+  font-size: 1rem;
+  color: $text-color;
+  line-height: 1.6;
+}
