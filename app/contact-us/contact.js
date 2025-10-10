@@ -1,9 +1,13 @@
 import React, {useState} from "react";
 import "../style/_contact.scss";
+import {sendEmail} from "../components/util/emailService";
 
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID;
+const PARENT_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_ADMISSION_TEMPLATE_ID_PARENT;
 
 export default function ContactPage() {
-    const [, setStatus] = useState("");
+    const [status, setStatus] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const [formData, setFormData] = useState({
         parentName: "",
@@ -20,26 +24,34 @@ export default function ContactPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setStatus("Sending...");
+        setLoading(true);
+
+        const templateParams = {
+            ...formData,
+            year: new Date().getFullYear(),
+            recipientEmail: formData.email, // needed for parent template
+        };
+
 
         try {
-            const res = await fetch("/contact", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(formData),
-            });
+            await sendEmail(
+                templateParams,
+                TEMPLATE_ID
+            );
+            // 2️⃣ Email to parent
+            await sendEmail(
+                { ...formData, recipientEmail: formData.email },
+                PARENT_TEMPLATE
+            );
 
-            if (res.ok) {
-                setStatus("✅ Message sent successfully!");
-                setFormData({parentName: "", mobile: "", childAge: "", email: "", program: "", message: ""});
-            } else {
-                const data = await res.json();
-                setStatus("❌ Failed: " + data.error);
-            }
+            setStatus("✅ Message sent successfully!");
+            setFormData({parentName: "", mobile: "", childAge: "", email: "", program: "", message: ""});
         } catch (err) {
-            setStatus("❌ Error: " + err.message);
+            console.error(err);
+            setStatus("❌ Failed to send message. Please try again.");
+        } finally {
+            setLoading(false);
         }
-        alert("Thank you! We will get back to you soon.");
     };
 
     return (
@@ -55,7 +67,19 @@ export default function ContactPage() {
                     <p>📞 (+91) 96671 17642</p>
                     <p>📧 info@meloraplayschool.in</p>
                 </div>
-
+                {status && (
+                    <p
+                        className={`status-message ${
+                            status.includes("❌")
+                                ? "error"
+                                : status.includes("⚠️")
+                                    ? "warning"
+                                    : "success"
+                        }`}
+                    >
+                        {status}
+                    </p>
+                )}
                 <form className="contact-form" onSubmit={handleSubmit}>
                     <label>
                         Parent Name:
@@ -102,20 +126,20 @@ export default function ContactPage() {
                         />
                     </label>
 
-                    <fieldset>
-                        <legend>Program Interested In:</legend>
-                        <label><input type="radio" name="program" value="Infant" onChange={handleChange}
-                                      required/> Infant</label>
-                        <label><input type="radio" name="program" value="Toddler"
-                                      onChange={handleChange}/> Toddler</label>
-                        <label><input type="radio" name="program" value="Nursery"
-                                      onChange={handleChange}/> Nursery</label>
-                        <label><input type="radio" name="program" value="Daycare"
-                                      onChange={handleChange}/> Daycare</label>
-                        <label><input type="radio" name="program" value="Afterschool"
-                                      onChange={handleChange}/> Afterschool</label>
-                    </fieldset>
-
+                    <select
+                        name="program"
+                        value={formData.program}
+                        onChange={handleChange}
+                        required
+                    >
+                        <option value="">Select Program</option>
+                        <option value="Infant">Infant</option>
+                        <option value="Playgroup">Playgroup</option>
+                        <option value="Nursery">Nursery</option>
+                        <option value="Junior KG">Junior KG</option>
+                        <option value="Senior KG">Senior KG</option>
+                    </select>
+                <br/><br/>
                     <label>
                         Message:
                         <textarea
@@ -126,7 +150,7 @@ export default function ContactPage() {
                         ></textarea>
                     </label>
 
-                    <button type="submit" className="contact-button">Submit</button>
+                    <button type="submit" disabled={loading} className="contact-button"> {loading ? "Submitting..." : "Submit Application"}</button>
                 </form>
             </section>
 

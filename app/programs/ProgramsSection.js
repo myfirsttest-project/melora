@@ -1,7 +1,7 @@
 'use client';
 import '../style/_admission.scss';
 import React from "react";
-import Hero from "@/app/components/Hero";
+import Hero from "../components/Hero.js";
 
 export default function ProgramsSection() {
     const programs = [
@@ -14,10 +14,10 @@ export default function ProgramsSection() {
     ];
 
     return (
-        <section className="section-programs">
+        <section className="section-schedule">
             <Hero
                 title="Our Programs"
-                subtitle="Explore our nurturing and engaging programs designed to foster curiosity, creativity, and confidence in every child."
+                description="Explore our nurturing and engaging programs designed to foster curiosity, creativity, and confidence in every child."
             />
             <div className="programs-grid">
                 {programs.map((program, index) => (

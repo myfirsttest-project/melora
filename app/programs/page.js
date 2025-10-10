@@ -1,5 +1,5 @@
-import ProgramsSection from '@/app/components/ProgramsSection';
-import ScheduleSection from '@/app/components/ScheduleSection';
+import ProgramsSection from './ProgramsSection';
+import ScheduleSection from './ScheduleSection';
 
 
 export default function ProgramsPage() {
