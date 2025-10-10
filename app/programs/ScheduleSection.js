@@ -1,7 +1,7 @@
 'use client';
 import React from "react";
-import '../style/_admission.scss';
-
+import '../style/_home.scss';
+import '../style/_schedule.scss';
 
 export default function ScheduleSection() {
     const schedules = [

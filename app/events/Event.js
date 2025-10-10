@@ -2,13 +2,14 @@
 import React from 'react';
 import Image from 'next/image';
 import '../style/_events.scss';
+import Hero from "../components/Hero";
 
 const eventsData = [
     {
         title: '🏃‍♀️ Sports Day',
         description: 'A day filled with excitement, friendly competition, and laughter as our children enjoy races, relays, and team games.',
         images: [
-            { src: '/images/sports1.jpeg', alt: 'Children running relay race' },
+            { src: '/images/sports6.jpeg', alt: 'Children running relay race' },
             { src: '/images/sports2.jpeg', alt: 'Kids playing tug of war' },
             { src: '/images/sports3.jpeg', alt: 'Children celebrating victory' },
             { src: '/images/sports4.jpeg', alt: 'Team relay finish line' },
@@ -47,7 +48,7 @@ function EventBlock({ title, description, images }) {
                             <Image
                                 src={img.src}
                                 alt={img.alt}
-                                width={600}
+                                width={500}
                                 height={500}
                                 className="event-image"
                             />
@@ -62,12 +63,10 @@ function EventBlock({ title, description, images }) {
 export default function EventsPage() {
     return (
         <section className="events-section">
-            <section className="admission-hero">
-                <h2>Events & Activities</h2>
-                <p>
-                    At Melora Kindergarten, we believe in learning through experiences. Explore our fun-filled events and celebrations throughout the year!
-                </p>
-            </section>
+            <Hero
+                title="Events & Activities"
+                description="At Melora Kindergarten, we believe in learning through experiences. Explore our fun-filled events and celebrations throughout the year!"
+            />
             {eventsData.map((event, idx) => (
                 <EventBlock
                     key={idx}

@@ -1,6 +1,6 @@
 'use client';
 import React from "react";
-import '../style/hero_old.scss';
+import '../style/_hero.scss';
 
 export default function Hero({ title, subtitle, description, center = true, className = "" }) {
     return (

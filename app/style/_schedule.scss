@@ -1,0 +1,73 @@
+/* ======================= */
+/* Schedule Section */
+.section-schedule {
+  padding: 2rem 1rem;
+  text-align: center;
+
+  .schedule-grid {
+    display: grid;
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 900px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .schedule-card {
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      color: #333;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .schedule-emoji {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #e53935; /* Primary red */
+        margin-bottom: 0.5rem;
+      }
+
+      .schedule-age {
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+
+      .schedule-desc {
+        font-size: 0.95rem;
+        color: #555; /* Neutral gray */
+        line-height: 1.5;
+      }
+
+      /* Variants for different schedules */
+      &.half-day {
+        background: linear-gradient(135deg, #FF8A80, #FFD9A6);
+      }
+      &.full-day {
+        background: linear-gradient(135deg, #FF6B81, #FFD9A6);
+      }
+      &.extended-day {
+        background: linear-gradient(135deg, #FF4D4D, #FFC1A6);
+      }
+    }
+  }
+}

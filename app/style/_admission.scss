@@ -8,6 +8,7 @@
   width: 80%;
   font-family: $font-family;
   color: $text-color;
+
 }
 
 /* ======================= */
@@ -146,35 +147,7 @@
   }
 }
 
-/* ======================= */
-/* Schedule Section */
-.section-schedule {
-  padding: $spacing-lg 1rem;
-  background: $soft-cream;
-  text-align: center;
 
-  .schedule-grid {
-    display: grid;
-    gap: $spacing-md;
-
-    @media (min-width: 768px) { grid-template-columns: repeat(3, 1fr); }
-
-    .schedule-card {
-      background: #ffe6e0; /* soft pastel peach */
-      padding: 1.5rem;
-      border-radius: $radius-md;
-      color: $text-color;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-
-      &:hover { transform: translateY(-5px); }
-
-      h3 { font-size: 1.2rem; color: $primary-red; margin-bottom: 0.5rem; }
-      p { font-size: 0.95rem; color: $neutral-gray; }
-    }
-  }
-}
 
 /* ======================= */
 /* Contact Section - Compact */
@@ -206,4 +179,74 @@
   .timeline-section { flex-direction: column; }
   .eligibility-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
   .programs-grid, .schedule-grid { grid-template-columns: 1fr; }
+}
+
+.admission-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; // space between fields
+  max-width: 500px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+
+  // Common styles for inputs, selects, textareas
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+    &::placeholder {
+      color: #999;
+    }
+
+    &:focus {
+      border-color: #4caf50;
+      box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+      outline: none;
+    }
+  }
+
+  // Style specifically for select dropdown arrow
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><polygon points='0,0 16,0 8,8' fill='%23999'/></svg>") no-repeat right 12px center;
+    background-size: 12px;
+    padding-right: 35px; // space for arrow
+  }
+
+  // Submit button
+  button {
+    padding: 12px;
+    background: #4caf50;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #45a049;
+    }
+
+    &:disabled {
+      background: #999;
+      cursor: not-allowed;
+    }
+  }
+
+  // Status message
+  p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
 }

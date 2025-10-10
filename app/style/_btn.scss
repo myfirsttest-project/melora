@@ -1,0 +1,60 @@
+// 🎨 Button theme colors
+$apply-gradient: linear-gradient(135deg, #ff6b81, #ffc75d);
+$apply-gradient-hover: linear-gradient(135deg, #ff4f6b, #ffb347);
+
+$contact-gradient: linear-gradient(135deg, #ff4d4d, #ff6b6b);
+$contact-gradient-hover: linear-gradient(135deg, #ff3333, #ff5555);
+
+// 🌟 Mixin for base button
+@mixin button-base {
+  display: inline-block;
+  color: #fff;
+  padding: 0.85rem 1.8rem;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+
+  &:active {
+    transform: translateY(1px) scale(0.97);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 4px;
+  }
+}
+
+// 🌟 Button Variants
+.apply-button {
+  @include button-base;
+  background: $apply-gradient;
+  box-shadow: 0 4px 12px rgba(255, 107, 129, 0.35);
+
+  &:hover {
+    background: $apply-gradient-hover;
+  }
+}
+
+.contact-button {
+  @include button-base;
+  background: $contact-gradient;
+  box-shadow: 0 4px 12px rgba(255, 77, 77, 0.35);
+
+  &:hover {
+    background: $contact-gradient-hover;
+  }
+}

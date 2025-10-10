@@ -1,5 +1,5 @@
 import Image from "next/image";
-import faceBook from "../../public/images/facebook.png";
+import faceBook from "../../../public/images/facebook.png";
 
 function Facebook() {
     return (

@@ -1,3 +1,4 @@
+'use client';
 import React, {useState} from "react";
 import "../style/_contact.scss";
 import {sendEmail} from "../components/util/emailService";
@@ -44,7 +45,7 @@ export default function ContactPage() {
                 PARENT_TEMPLATE
             );
 
-            setStatus("✅ Message sent successfully!");
+            setStatus("✅ Message sent successfully, we will connect with you shortly !");
             setFormData({parentName: "", mobile: "", childAge: "", email: "", program: "", message: ""});
         } catch (err) {
             console.error(err);
@@ -57,7 +58,7 @@ export default function ContactPage() {
     return (
         <main className="contact-wrapper">
             <section className="contact-hero">
-                <h3>Contact Melora Playschool</h3>
+                <h3>Enroll your child</h3>
                 <p>We’d love to hear from you! Please fill out the form below to get in touch.</p>
             </section>
             <section className="contact-content">
@@ -67,22 +68,9 @@ export default function ContactPage() {
                     <p>📞 (+91) 96671 17642</p>
                     <p>📧 info@meloraplayschool.in</p>
                 </div>
-                {status && (
-                    <p
-                        className={`status-message ${
-                            status.includes("❌")
-                                ? "error"
-                                : status.includes("⚠️")
-                                    ? "warning"
-                                    : "success"
-                        }`}
-                    >
-                        {status}
-                    </p>
-                )}
                 <form className="contact-form" onSubmit={handleSubmit}>
                     <label>
-                        Parent Name:
+                        Parent Name
                         <input
                             type="text"
                             name="parentName"
@@ -93,7 +81,7 @@ export default function ContactPage() {
                     </label>
 
                     <label>
-                        Mobile:
+                        Mobile
                         <input
                             type="tel"
                             name="mobile"
@@ -104,7 +92,7 @@ export default function ContactPage() {
                     </label>
 
                     <label>
-                        Email:
+                        Email
                         <input
                             type="email"
                             name="email"
@@ -115,7 +103,7 @@ export default function ContactPage() {
                     </label>
 
                     <label>
-                        Child Age:
+                        Child Age
                         <input
                             type="number"
                             name="childAge"
@@ -141,7 +129,7 @@ export default function ContactPage() {
                     </select>
                 <br/><br/>
                     <label>
-                        Message:
+                        Message
                         <textarea
                             name="message"
                             value={formData.message}
@@ -153,7 +141,21 @@ export default function ContactPage() {
                     <button type="submit" disabled={loading} className="contact-button"> {loading ? "Submitting..." : "Submit Application"}</button>
                 </form>
             </section>
-
+            <section>
+                {status && (
+                    <p
+                        className={`status-message ${
+                            status.includes("❌")
+                                ? "error"
+                                : status.includes("⚠️")
+                                    ? "warning"
+                                    : "success"
+                        }`}
+                    >
+                        {status}
+                    </p>
+                )}
+            </section>
             <section className="contact-map">
                 <h3>Come be a part of the best kids play school in Sector 83 Gurugram, Vatika India</h3>
                 {/* Placeholder for Google Map */}

@@ -1,14 +1,10 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-    output: "export",
-    trailingSlash: true,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    reactStrictMode: true,
+    output: "export",        // static export
+    trailingSlash: true,     // adds / at the end of URLs
     images: {
-        unoptimized: true,
+        unoptimized: true,     // needed for static export
     },
-    webpack: (config) => {
-        return config;
-    },
-};
-
-export default nextConfig;
+ };
+module.exports = nextConfig;

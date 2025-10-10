@@ -1,41 +1,57 @@
 "use client";
-import React, { useState } from 'react';
-import MeloraLogo from "../logos/MeloraLogo";
+import React, { useState } from "react";
 import Link from "next/link";
 import "../style/Header.css";
+import MeloraLogo from "./logos/MeloraLogo";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const menuItems = [
         { name: "Home", href: "/" },
-        { name: "About", href: "/about" },
-        { name: "Program", href: "/program" },
+        { name: "About", href: "/about-us" },
+        { name: "Program", href: "/programs" },
         { name: "Admission", href: "/admission" },
         { name: "Events", href: "/events" },
-        { name: "Contact", href: "/contact" },
     ];
 
     return (
         <header className="header">
-            <picture>
-                {
-                    /* <MeloraLogo/> */
-                }
-            </picture>
+            {/* Logo */}
+            <div className="logo">
+                <picture>
+                    {
+                        <MeloraLogo/>
+                    }
+                </picture>
+            </div>
 
-            <nav className="nav">
-                <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+            {/* Navigation */}
+            <nav className={`nav ${menuOpen ? "active" : ""}`}>
+                <ul className="nav-links">
                     {menuItems.map((item, index) => (
                         <li key={index}>
                             <Link href={item.href}>{item.name}</Link>
                         </li>
                     ))}
                 </ul>
+
+                <div className="nav-buttons">
+                    <Link href="/contact-us" className="nav-btn btn-enroll">
+                        Enroll Your Child
+                    </Link>
+                    <Link href="/partner" className="nav-btn btn-partner">
+                        Become a Partner
+                    </Link>
+                </div>
             </nav>
 
-            <div className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-                &#9776;
+            {/* Mobile Toggle */}
+            <div
+                className="nav-toggle"
+                onClick={() => setMenuOpen((prev) => !prev)}
+            >
+                ☰
             </div>
         </header>
     );

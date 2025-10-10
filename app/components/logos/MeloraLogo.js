@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import meloraImage from "@/public/images/melora.png";
+import meloraImage from "../../../public/images/melora.png";
 import React from "react";
 
 export function MeloraLogo() {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import instagramIcon from "@/public/images/instagram.png";
+import instagramIcon from "../../../public/images/instagram.png";
 
 export function instaLogo() {
     return (

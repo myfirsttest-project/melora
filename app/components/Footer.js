@@ -1,8 +1,9 @@
+"use client";
 import React from "react";
 import "../style/Footer.css";
-import Facebook from "@/app/logos/Facebook";
-import InstaLogo from "@/app/logos/InstaLogo";
-import YoutubeLogo from "@/app/logos/YoutubeLogo";
+import Facebook from "./logos/Facebook";
+import InstaLogo from "./logos/InstaLogo";
+import YoutubeLogo from "./logos/YoutubeLogo";
 
 const Footer = () => {
     return (
@@ -13,7 +14,7 @@ const Footer = () => {
                     <h3 className="subsection-title">Melora Playschool & Daycare</h3>
                     <p>Nurturing Little Minds, Brightening Big Futures</p>
                     <p>
-                        We are dedicated to providing a nurturing, safe, and stimulating
+                        Founded in 2015 with dedication to providing a nurturing, safe, and stimulating
                         environment where children can learn, grow, and thrive.
                     </p>
                 </div>

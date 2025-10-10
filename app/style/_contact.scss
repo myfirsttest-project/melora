@@ -1,4 +1,6 @@
 /* Wrapper */
+@import './btn.scss';
+
 .contact-wrapper {
     max-width: 1600px;
     margin: 0 auto;
@@ -127,4 +129,30 @@
     .contact-content {
         flex-direction: column;
     }
+}
+
+.contact-form select,
+.contact-form select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  appearance: none; // remove default arrow
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><polygon points='0,0 16,0 8,8' fill='%23999'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+
+  &:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+    outline: none;
+  }
 }

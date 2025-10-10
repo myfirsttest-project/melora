@@ -1,5 +1,5 @@
 import Image from "next/image";
-import youtube from "@/public/images/youtube.png";
+import youtube from "../../../public/images/youtube.png";
 
 function YoutubeLogo () {
     return (

@@ -12,12 +12,11 @@ export default function AdmissionPage() {
             {/* Hero */}
             <Hero
                 title="Admissions at Melora School"
-                subtitle="Join our nurturing and creative community"
                 description="We’re excited to welcome new families. Our admission process is simple, transparent, and designed to help you make the best choice for your child."
             />
 
             {/* Timeline & Eligibility */}
-            <section className="admission-process-eligibility">
+            <section>
                 <h2 className="section-title">Application Process & Age Eligibility</h2>
                 <div className="timeline-section">
                     {[
