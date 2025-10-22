@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import "../style/_contact.scss";
 import {sendEmail} from "../components/util/emailService";
 import Image from "next/image";
+import Hero from "../components/Hero";
 
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID;
 const PARTNER_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_ADMISSION_TEMPLATE_ID_PARENT;
@@ -10,7 +11,6 @@ const PARTNER_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_ADMISSION_TEMPLATE_ID_P
 export default function PartnerPage() {
     const [status, setStatus] = useState("");
     const [loading, setLoading] = useState(false);
-
     const [formData, setFormData] = useState({
         companyName: "",
         contactPerson: "",
@@ -18,7 +18,6 @@ export default function PartnerPage() {
         email: "",
         message: ""
     });
-
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value});
     };
@@ -56,9 +55,11 @@ export default function PartnerPage() {
     return (
         <main className="contact-wrapper">
             <section className="contact-hero">
-                <h3>Become a Partner with Melora Playschool</h3>
-                <p>We welcome organizations and individuals to collaborate with us. Fill the form below to join
-                    hands!</p>
+                <Hero
+                    title="Become a Partner with Melora"
+                    description="We welcome organizations and individuals to collaborate with us. Fill the form below to join
+                    hands!"
+                />
             </section>
             <section className="contact-content">
                 <div className="contact-info">

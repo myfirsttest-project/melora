@@ -1,38 +1,50 @@
 /* ======================= */
-/* Colors */
-$primary-red: #e53935;
-$secondary-red: #d32f2f;
-$tertiary-red: #ff1744;
-$light-pink: #ffe6e0;
-$soft-pink: #fff0f0;
-$soft-cream: #fdf6f0;
-$neutral-gray: #555;
-$text-color: #333; // Default text color
-$breakpoint-sm: 576px;
+/* MELORA UI VARIABLES (Playful Pastel Theme) ======================= */
 
+/* Colors */
+$sky-blue: #A7C7E7;
+$mint-green: #B9FBC0;
+$peachy-coral: #FFB6A3;
+$sunny-yellow: #FEEA93;
+$text-dark: #2C3E50;
+$text-light: #ffffff;
+$soft-cream: #fffdf8;
+$primary-color: #2b6cb0; // Blue for headings
+$accent-color: #ff6b6b;  // Main accent (CTA, highlights)
+$background-light: #fff;
+$background-white: #fff;
+$text-dark: #222;
+$section-radius: 25px;
 
 /* Gradients */
-$soft-gradient: linear-gradient(135deg, #FF6B81, #FFD9A6);
-$gradient-primary: linear-gradient(135deg, #ff6b81, #ffb347);
+$gradient-fun: linear-gradient(135deg, $peachy-coral, $sunny-yellow);
+$soft-gradient: linear-gradient(135deg, #FFB6A3, #FEEA93);
+$background: radial-gradient(circle at 30% 30%, $peachy-coral 0%, $sunny-yellow 50%, $mint-green 100%);
 
-/* ======================= */
+
 /* Typography */
-$font-family: 'Comic Neue', 'Comic Sans MS', Arial, sans-serif;
+$font-family: 'Poppins', sans-serif;
 
-/* ======================= */
 /* Spacing */
 $spacing-sm: 0.5rem;
 $spacing-md: 1rem;
 $spacing-lg: 2rem;
 
-/* ======================= */
 /* Border radius */
 $radius-sm: 8px;
 $radius-md: 12px;
-$radius-lg: 15px;
+$radius-lg: 40px;
 
-/* ======================= */
 /* Breakpoints */
+$breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 
+
+$hero-footer-text: $text-light; // unified text color
+$hero-footer-font: $font-family; // same font for both
+$hero-title-size: 2.5rem;
+$hero-subtitle-size: 1.4rem;
+$hero-description-size: 1rem;
+$footer-title-size: 1.4rem;
+$footer-text-size: 0.95rem;

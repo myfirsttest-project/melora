@@ -1,18 +1,25 @@
 "use client";
 import React from "react";
-import "../style/Footer.css";
+
 import Facebook from "./logos/Facebook";
 import InstaLogo from "./logos/InstaLogo";
 import YoutubeLogo from "./logos/YoutubeLogo";
+import '../style/_melora-ui.scss';
 
 const Footer = () => {
     return (
         <footer className="melora-footer">
+            <div className="footer-overlay"></div>
+            {/* Floating shapes continuing from hero */}
+            <div className="floating-shape circle1"></div>
+            <div className="floating-shape circle2"></div>
+            <div className="floating-shape circle3"></div>
+
             <div className="footer-container">
                 {/* ABOUT */}
                 <div className="footer-section about-footer">
                     <h3 className="subsection-title">Melora Playschool & Daycare</h3>
-                    <p>Nurturing Little Minds, Brightening Big Futures</p>
+                    <p>Shaping Little Mind with Big Heart</p>
                     <p>
                         Founded in 2015 with dedication to providing a nurturing, safe, and stimulating
                         environment where children can learn, grow, and thrive.
@@ -25,8 +32,8 @@ const Footer = () => {
                     <ul>
                         <li><a href="/about">About Us</a></li>
                         <li><a href="/programs">Our Programs</a></li>
-                        <li><a href="/admissions">Admissions</a></li>
-                        <li><a href="/resources">Parent Resources</a></li>
+                        <li><a href="/admission">Admissions</a></li>
+                        <li><a href="/events">Parent Resources</a></li>
                         <li><a href="/contact">Contact Us</a></li>
                     </ul>
                 </div>
@@ -60,6 +67,7 @@ const Footer = () => {
                 © 2015 Melora DayCare and PlaySchool. All rights reserved.
             </div>
         </footer>
+
     );
 };
 

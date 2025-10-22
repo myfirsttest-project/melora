@@ -2,11 +2,11 @@
 import React from "react";
 
 const partners = [
-    { name: "Partner 1", logo: "/images/bt.png" },
-    { name: "Partner 2", logo: "/images/bajaj-seeklogo.png" },
-    { name: "Partner 3", logo: "/images/amazon.png" },
-    { name: "Partner 4", logo: "/images/KPMG_id9tLD2YU7_1.png" },
-    { name: "Partner 5", logo: "/images/pwc.png" },
+    { name: "Partner 1", logo: "/images/partner4.png" },
+    { name: "Partner 2", logo: "/images/partner5.png" },
+    { name: "Partner 3", logo: "/images/partner.png" },
+    { name: "Partner 4", logo: "/images/partner1.png" },
+    { name: "Partner 5", logo: "/images/partner2.png" },
 ];
 
 export default function PartnerLogo() {

@@ -2,65 +2,73 @@
 // Variables
 $primary-red: #e53935;
 $secondary-red: #d32f2f;
-$soft-cream: #fdf6f0;
-$text-color: #333;
-$neutral-gray: #555;
-$card-bg: #fff2e8;
+$accent-yellow: #f9c74f;
+$accent-green: #43aa8b;
+$text-dark: #222;
+$text-light: #fff;
+$heading-blue: #2b6cb0;
+$card-bg: #fff;
 $card-shadow: rgba(0, 0, 0, 0.08);
-$card-shadow-hover: rgba(0, 0, 0, 0.12);
+$card-shadow-hover: rgba(0, 0, 0, 0.15);
 $font-family: 'Comic Neue', 'Comic Sans MS', cursive;
 
 // =======================
 // Hero Section
 .events-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   background: linear-gradient(135deg, lighten($primary-red, 10%), lighten($secondary-red, 20%));
-  padding: 2rem 1rem;
+  padding: 4rem 1rem;
   border-radius: 15px;
-  margin-bottom: 2rem;
-  color: #fff;
+  margin-bottom: 3rem;
+  color: $text-light;
 
   h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem; // bigger heading
+    font-weight: 800;
+    margin-bottom: 1rem;
     font-family: $font-family;
+    letter-spacing: 0.5px;
   }
 
   p {
-    font-size: 1rem;
-    line-height: 1.4;
-    margin: 0 auto;
-    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.4; // slightly tighter
+    max-width: 700px;
   }
 }
 
-// =======================
-// Events Section
-.events-section {
+// Event Sections
+.event-section {
   width: 100%;
   padding: 3rem 1rem;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  overflow: hidden;
 
-  .events-title {
+  .section-header {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: $primary-red;
+    font-size: 2.2rem; // more prominent
     font-family: $font-family;
+    margin-bottom: 1.5rem; // reduced spacing
+    color: $heading-blue;
+    font-weight: 700;
+    position: relative;
   }
 
-  .events-subtitle {
-    text-align: center;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: $neutral-gray;
-  }
-
-  // Event Cards
   .event-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem; // reduced gap
+    padding: 1.2rem 1rem; // slightly smaller padding
     border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px $card-shadow;
     transition: transform 0.3s ease, box-shadow 0.25s ease;
 
     &:hover {
@@ -68,64 +76,100 @@ $font-family: 'Comic Neue', 'Comic Sans MS', cursive;
       box-shadow: 0 10px 25px $card-shadow-hover;
     }
 
-    .event-heading {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: $primary-red;
-      font-family: $font-family;
+    &.reverse {
+      flex-direction: row-reverse;
     }
 
-    .event-description {
-      font-size: 0.95rem;
-      color: $neutral-gray;
-      line-height: 1.4;
-      margin-bottom: 1rem;
-    }
-  }
+    .event-text {
+      flex: 1;
+      min-width: 280px;
 
-  // Image Grid
-  .image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 0.8rem;
-    align-items: start;
-
-    .image-wrapper {
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease;
-      background-color: lighten($primary-red, 40%);
-
-      &:hover {
-        transform: scale(1.03);
+      h3 {
+        font-size: 1.8rem; // bigger
+        margin-bottom: 0.8rem; // reduced
+        color: $heading-blue;
+        font-family: $font-family;
+        font-weight: 700;
       }
 
-      .event-image {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-        display: block;
+      p {
+        font-size: 1.5rem;
+        line-height: 1.4;
+        color: $text-dark;
+      }
+    }
+
+    .event-images {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); // wider images
+      gap: 0.6rem;
+      margin-left: -20px; // shift images slightly to left
+
+      .image-wrapper {
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+        transition: transform 0.3s ease;
+
+        &:hover { transform: scale(1.05); }
+
+        img {
+          width: 100%;
+          height: 360px; // slightly taller images
+          object-fit: cover;
+          display: block;
+        }
       }
     }
   }
 }
 
-// =======================
 // Responsive Adjustments
-@media (max-width: 768px) {
-  .events-hero {
-    padding: 1.5rem 1rem;
-
-    h2 { font-size: 1.5rem; }
-    p { font-size: 0.95rem; }
+@media (max-width: 968px) {
+  .event-card {
+    flex-direction: column !important;
+    .event-images {
+      grid-template-columns: 1fr;
+      margin-left: 0; // reset for mobile
+    }
   }
 
-  .events-section {
-    .events-title { font-size: 1.5rem; }
-    .events-subtitle { font-size: 1rem; }
-
-    .event-card { padding: 1rem; }
-    .image-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .section-header {
+    font-size: 2rem;
   }
+}
+// Floating / subtle hover animations for event images
+.event-images {
+  .image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    transition: transform 0.5s ease, box-shadow 0.4s ease;
+
+    &:hover {
+      transform: scale(1.07) translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    // Optional: floating effect for fun
+    &.float {
+      animation: floatEvent 8s ease-in-out infinite;
+    }
+
+    img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+  }
+}
+
+// Keyframes for subtle floating effect
+@keyframes floatEvent {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }

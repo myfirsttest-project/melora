@@ -1,23 +1,24 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import "../style/Header.css";
-import MeloraLogo from "./logos/MeloraLogo";
+import { Menu, X } from "lucide-react"; // icons for mobile menu
+import MeloraLogo from "./logos/MeloraLogo"; // adjust path if needed
 
-const Header = () => {
+export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-
+    const toggleMenu = () => setMenuOpen(!menuOpen);
     const menuItems = [
         { name: "Home", href: "/" },
-        { name: "About", href: "/about-us" },
-        { name: "Program", href: "/programs" },
+        { name: "About", href: "/about" },
+        { name: "Program", href: "/program" },
         { name: "Admission", href: "/admission" },
-        { name: "Events", href: "/events" },
+        { name: "Events", href: "/events-and-activities" },
+        { name: "Contact", href: "/contact" },
     ];
 
     return (
         <header className="header">
-            {/* Logo */}
+            {/* Logo Section */}
             <div className="logo">
                 <picture>
                     {
@@ -37,24 +38,17 @@ const Header = () => {
                 </ul>
 
                 <div className="nav-buttons">
-                    <Link href="/contact-us" className="nav-btn btn-enroll">
-                        Enroll Your Child
-                    </Link>
-                    <Link href="/partner" className="nav-btn btn-partner">
+                    <Link href="/contact" className="nav-btn btn-enroll">Enroll Today</Link>
+                    <Link href="/partner" className="nav-btn btn-enroll">
                         Become a Partner
                     </Link>
                 </div>
             </nav>
 
             {/* Mobile Toggle */}
-            <div
-                className="nav-toggle"
-                onClick={() => setMenuOpen((prev) => !prev)}
-            >
-                ☰
+            <div className="nav-toggle" onClick={toggleMenu}>
+                {menuOpen ? <X /> : <Menu />}
             </div>
         </header>
     );
-};
-
-export default Header;
+}
