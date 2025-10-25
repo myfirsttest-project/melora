@@ -1,0 +1,200 @@
+/* ===================== ADMISSION PAGE ===================== */
+.admission-wrapper {
+    background: #f9fcff;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    padding-bottom: 4rem;
+}
+
+/* ===================== Section titles ===================== */
+.section-title {
+    font-size: 2.4rem; /* h2 typography */
+    font-weight: 700;
+    text-align: center;
+    color: #2b6cb0; /* $primary-color */
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #ff6b6b, #ff8989); /* $accent-color gradient */
+    margin: 0.6rem auto 0;
+}
+
+/* ===================== Timeline (Process Section) ===================== */
+.timeline {
+    max-width: 900px;
+    margin: 0 auto 4rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #e2e8f0;
+}
+
+.timeline-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.timeline-step .step-circle {
+    background: #ff6b6b; /* $accent-color */
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.timeline-step .step-details {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    padding: 1rem 1.5rem;
+    flex: 1;
+}
+
+.timeline-step .step-details h4 {
+    font-size: 1.8rem; /* h3 typography */
+    font-weight: 700;
+    color: #2b6cb0; /* $primary-color */
+    margin-bottom: 0.4rem;
+}
+
+.timeline-step .step-details p {
+    font-size: 1.6rem; /* p typography */
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ===================== Eligibility grid ===================== */
+.eligibility-section .eligibility-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.eligibility-section .eligibility-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 320px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.eligibility-section .eligibility-card:hover {
+    transform: translateY(-5px);
+}
+
+.eligibility-section .eligibility-card .emoji {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.eligibility-section .eligibility-card h3 {
+    font-size: 1.8rem; /* h3 typography */
+    font-weight: 700;
+    color: #2b6cb0; /* $primary-color */
+    margin-bottom: 0.3rem;
+}
+
+.eligibility-section .eligibility-card .age {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 0.3rem;
+}
+
+.eligibility-section .eligibility-card .timings {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+}
+
+.eligibility-section .eligibility-card .description {
+    font-size: 1.5rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* ===================== Contact / Apply section ===================== */
+.admission-contact {
+    text-align: center;
+    background: linear-gradient(135deg, #2b6cb0, #ff6b6b); /* primary + accent */
+    color: #fff;
+    padding: 4rem 1rem;
+    border-radius: 20px;
+    margin: 4rem auto;
+    max-width: 800px;
+    height: auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.admission-contact h3 {
+    font-size: 2.4rem; /* h2 typography */
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.admission-contact p {
+    font-size: 1.6rem; /* p typography */
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.admission-contact .contact-info {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.admission-contact .apply-button {
+    background: #fff;
+    color: #2b6cb0; /* $primary-color */
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admission-contact .apply-button:hover {
+    background: #ff6b6b; /* $accent-color */
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 768px) {
+    .timeline::before { left: 20px; }
+
+    .timeline-step .step-circle { width: 40px; height: 40px; }
+
+    .admission-contact { padding: 3rem 1rem; }
+}

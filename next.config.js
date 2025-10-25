@@ -1,10 +1,21 @@
-/** @type {import('next').NextConfig} */
+const path = require("path");
+
 const nextConfig = {
-    reactStrictMode: true,
-    output: "export",        // static export
-    trailingSlash: true,     // adds / at the end of URLs
+    outputFileTracingRoot: path.join(__dirname),
+
     images: {
-        unoptimized: true,     // needed for static export
+        unoptimized: true,
+        domains: [], // add any external domains if used
+        qualities: [75, 80, 85, 90, 95, 100], // include all qualities you use
     },
- };
+
+    webpack: (config) => {
+        config.watchOptions = {
+            poll: 1000,
+            aggregateTimeout: 300,
+        };
+        return config;
+    },
+};
+
 module.exports = nextConfig;

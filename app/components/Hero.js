@@ -1,16 +1,15 @@
 'use client';
 import React from "react";
-import '../style/_melora-ui.scss';
+import '../style/_melora-ui.css';
 
-
-export default function Hero({
-                                 title,
-                                 subtitle,
-                                 description,
-                                 overlay = true,
-                                 center = true,
-                                 className = ""
-                             }) {
+function Hero({
+                  title,
+                  subtitle,
+                  description,
+                  overlay = true,
+                  center = true,
+                  className = ""
+              }) {
     return (
         <section
             className={`hero-section ${center ? "text-center" : "text-left"} ${className}`}
@@ -24,3 +23,5 @@ export default function Hero({
         </section>
     );
 }
+
+export default Hero;

@@ -1,0 +1,12 @@
+/* Simplified main.css - no imports for now */
+/* We'll import CSS directly in components instead */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}

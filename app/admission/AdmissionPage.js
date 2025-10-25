@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from "react";
 import AdmissionForm from "./AdmissionForm";
-import '../style/_admission.scss';
+import '../style/_admission.css';
 import Hero from "../components/Hero";
 import { motion } from "framer-motion";
 

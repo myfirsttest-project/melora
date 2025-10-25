@@ -1,6 +1,6 @@
 import React from "react"
-import './style/App.css';
-import Home from "../app/components/Home";
+import './style/_app.css';
+import Home from "./components/Home";
 
 export const metadata = {
     title: "About Melora Play School | Early Learning & Child Development",
@@ -9,9 +9,7 @@ export const metadata = {
 export default function Page() {
     return (
         <div className="app-wrapper">
-            <main className="main-content">
-                <Home/>
-            </main>
+              <Home/>
         </div>
     )
 }

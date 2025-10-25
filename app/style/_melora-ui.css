@@ -1,0 +1,310 @@
+
+/* MELORA UI MAIN STYLES */
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 97%;
+    z-index: 120;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 36px;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(14px);
+    border-radius: 25px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.header .logo img,
+.header .logo svg {
+    height: 48px;
+    transition: transform 0.3s ease;
+}
+
+.header .logo h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: 0.5px;
+}
+
+.header .logo:hover img {
+    transform: scale(1.05);
+}
+
+.header .nav {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.header .nav .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.header .nav .nav-links a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 800;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.header .nav .nav-links a:hover {
+    color: #2b6cb0; /* $primary-color */
+}
+
+.header .nav .nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.header .nav .nav-buttons .nav-btn {
+    padding: 8px 18px;
+    border-radius: 40px; /* $radius-lg */
+    font-weight: 600;
+    background: radial-gradient(circle at 30% 30%, #FFB6A3 0%, #FEEA93 50%, #B9FBC0 100%);
+    color: #222;
+    box-shadow: 0 4px 10px rgba(255, 182, 163, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.header .nav .nav-buttons .nav-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #FEEA93, #B9FBC0);
+}
+
+.header .nav-toggle {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .header .nav {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem 2rem;
+        transform: translateY(-200%);
+        transition: transform 0.3s ease;
+    }
+    .header .nav.active {
+        transform: translateY(0);
+    }
+    .header .nav .nav-links,
+    .header .nav .nav-buttons {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .header .nav-toggle {
+        display: block;
+    }
+}
+
+/* ================= HERO SECTION ================= */
+.hero-section {
+    position: relative;
+    text-align: center;
+    padding: 0.5rem 2rem 1rem;
+    font-family: 'Poppins', 'DM Sans', sans-serif;
+    color: #111;
+    background: radial-gradient(circle at 30% 30%, #FFB6A3 0%, #FEEA93 50%, #B9FBC0 100%);
+    overflow: hidden;
+    border-radius: 0 0 55% 55% / 0 0 28% 28%;
+    z-index: 1;
+}
+
+.hero-section .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 40%, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+    mix-blend-mode: multiply;
+    z-index: 1;
+}
+
+.hero-section .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.hero-section .hero-title {
+    font-size: 2.9rem;
+    font-weight: 800;
+    color: #111;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+    margin-bottom: 0.6rem;
+}
+
+.hero-section .hero-subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.9rem;
+}
+
+.hero-section .hero-description {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #222;
+    margin-bottom: 1.2rem;
+}
+
+.hero-section .hero-btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 40px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FFB6A3, #FEEA93);
+    color: #111;
+    font-size: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.hero-section .hero-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #FEEA93, #B9FBC0);
+}
+
+/* ================= FOOTER SECTION ================= */
+.melora-footer {
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    padding: 1rem 1.5rem; /* reduced padding */
+    font-family: 'Poppins', 'DM Sans', sans-serif;
+    color: #111;
+    background: radial-gradient(circle at 30% 30%, #FFB6A3 0%, #FEEA93 50%, #B9FBC0 100%);
+    border-radius: 55% 55% 0 0 / 28% 28% 0 0;
+    z-index: 1;
+}
+
+.melora-footer .footer-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 30%, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+    mix-blend-mode: multiply;
+    z-index: 1;
+}
+
+.melora-footer .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.melora-footer .footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.melora-footer .footer-section h3 {
+    font-size:1.9rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    margin-top: 0.8rem;
+    color: #111;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4);
+    text-align: left;
+}
+
+.melora-footer .footer-section p,
+.melora-footer .footer-section a {
+    color: #111;
+    margin-top: 0.8rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.3s;
+    text-align: left;
+}
+
+.melora-footer .footer-section a:hover {
+    color: #e69991; /* darken peachy-coral 10% */
+    text-decoration: underline;
+}
+
+.melora-footer .social-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.melora-footer .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;            /* ⬆️ increased from 55px */
+    height: 70px;           /* ⬆️ increased from 55px */
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: all 0.3s ease;
+    font-size: 1.8rem;      /* ⬆️ increase icon size */
+}
+
+.melora-footer .social-icons a:hover {
+    transform: scale(1.2) translateY(-4px); /* ⬆️ stronger hover effect */
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.melora-footer .social-icons a:nth-child(1) { background: #1877f2; } /* Facebook */
+.melora-footer .social-icons a:nth-child(2) {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+} /* Instagram */
+.melora-footer .social-icons a:nth-child(3) { background: #ff0000; } /* YouTube */
+
+.melora-footer .social-icons svg {
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.5));
+    font-size: 1.8rem;
+}
+
+.melora-footer .footer-bottom {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 0.8rem;
+    border-top: 2px dashed rgba(0, 0, 0, 0.15);
+    font-size: 1rem;
+    font-weight: 800;
+    color: #222;
+}
+
+@media (max-width: 768px) {
+    .melora-footer .social-icons a {
+        width: 60px;      /* slightly smaller on mobile */
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+/* Floating animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}

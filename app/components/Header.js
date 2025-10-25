@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react"; // icons for mobile menu
-import MeloraLogo from "./logos/MeloraLogo"; // adjust path if needed
+import { Menu, X } from "lucide-react";
+import MeloraLogo from "./logos/MeloraLogo";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -38,8 +38,8 @@ export default function Header() {
                 </ul>
 
                 <div className="nav-buttons">
-                    <Link href="/contact" className="nav-btn btn-enroll">Enroll Today</Link>
-                    <Link href="/partner" className="nav-btn btn-enroll">
+                    <Link href="/contact" className="nav-btn">Enroll Today</Link>
+                    <Link href="/partner" className="nav-btn">
                         Become a Partner
                     </Link>
                 </div>

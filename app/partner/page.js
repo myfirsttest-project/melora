@@ -1,6 +1,6 @@
 "use client";
 import React, {useState} from "react";
-import "../style/_contact.scss";
+import "../style/_contact.css";
 import {sendEmail} from "../components/util/emailService";
 import Image from "next/image";
 import Hero from "../components/Hero";

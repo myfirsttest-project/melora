@@ -3,8 +3,8 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Hero from "../components/Hero.js";
-import '../style/_home.scss';
-import './_program.scss';
+import '../style/_home.css';
+import './_program.css';
 
 export default function CombinedProgramsSection() {
     const programs = [

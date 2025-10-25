@@ -1,10 +1,25 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import '../style/_events.scss';
+import '../style/_events.css';
 import Hero from "../components/Hero";
 
 const sections = [
+    {
+        type: 'Outdoor Activities',
+        events: [
+            {
+                title: '🚌 School Trips',
+                description: 'Safe and exciting trips that take our kids beyond the classroom, exploring parks, farms, museums, and discovery centers.',
+                images: [
+                    '/images/trip1.png',
+                    '/images/trip2.jpeg',
+                    '/images/movie_melora.jpg',
+                    '/images/outside.jpg',
+                ]
+            }
+        ]
+    },
     {
         type: 'Sports',
         events: [
@@ -14,7 +29,8 @@ const sections = [
                 images: [
                     '/images/sports6.jpeg',
                     '/images/sports2.jpeg',
-                    '/images/sports3.jpeg'
+                    '/images/sports3.jpeg',
+                    '/images/sports4.jpeg',
                 ]
             }
         ]
@@ -27,26 +43,14 @@ const sections = [
                 description: 'Celebrating diversity and culture with Diwali, Christmas, Teej, and Independence Day events full of joy, colors, and community spirit.',
                 images: [
                     '/images/diwali.jpg',
-                    '/images/meloraKids1.jpeg',
-                    '/images/festival.jpg'
-                ]
-            }
-        ]
-    },
-    {
-        type: 'Outdoor Activities',
-        events: [
-            {
-                title: '🚌 School Trips',
-                description: 'Safe and exciting trips that take our kids beyond the classroom, exploring parks, farms, museums, and discovery centers.',
-                images: [
-                    '/images/trip1.png',
-                    '/images/trip2.jpeg',
-                    '/images/trip3.jpeg'
+                    '/images/melora_happy1.jpg',
+                    '/images/santa.jpg',
+                    '/images/meloraHappy.jpg'
                 ]
             }
         ]
     }
+
 ];
 
 export default function EventsPage() {
@@ -77,8 +81,8 @@ export default function EventsPage() {
                                             <Image
                                                 src={src}
                                                 alt={`${event.title} image ${j + 1}`}
-                                                width={500}
-                                                height={360}
+                                                width={650}
+                                                height={390}
                                                 priority={true}
                                             />
                                         </div>
