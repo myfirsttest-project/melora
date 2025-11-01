@@ -1,0 +1,101 @@
+/* ================================
+   MELORA EXPERIENCE
+================================ */
+.melora-experience {
+    padding: 5rem 0 6rem;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.melora-experience::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 221, 87, 0.5), transparent);
+    z-index: 0;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite alternate;
+}
+
+.melora-experience .subtitle {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #555;
+    max-width: 850px;
+    margin: 0 auto 3.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Why Grid */
+.why-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.why-card {
+    background: linear-gradient(145deg, #ffffff, #f0f6fa); /* Bright subtle gradient */
+    border-radius: 25px;
+    padding: 2rem;
+    width: 300px;
+    height: 380px; /* Uniform card height */
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 107, 161, 0.15); /* Soft blue shadow */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 107, 161, 0.25);
+}
+
+.why-card .title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.why-card .icon {
+    font-size: 2.2rem;
+    color: #006ba1; /* Blue icon matching footer/programs */
+    margin: 0;
+}
+
+.why-card h3 {
+    font-size: 1.8rem;
+    color: #006ba1; /* Blue heading */
+    margin: 0;
+    font-weight: 700;
+}
+
+.why-card p {
+    font-size: 1.4rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(20px); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .why-card { width: 45%; }
+}
+
+@media (max-width: 768px) {
+    .why-card { width: 100%; }
+}

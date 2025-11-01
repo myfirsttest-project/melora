@@ -1,7 +1,7 @@
 "use client";
 import React, {useState, useEffect} from "react";
 import {motion, AnimatePresence} from "framer-motion";
-import "../style/_home.css";
+import "../style/heading.css";
 import HeroSection from "./HeroSection";
 import ProgramsSection from "./ProgramSection";
 import MeloraExperience from "./MeloraExperience";
@@ -21,11 +21,11 @@ const Home = () => {
 
     return (
         <div className="home-container">
-        <HeroSection/>
-        <ProgramsSection/>
-        <MeloraExperience/>
-        <Testimonials/>
-        <Partners/>
+            <HeroSection/>
+            <ProgramsSection/>
+            <MeloraExperience/>
+            <Testimonials/>
+            <Partners/>
 
             {/* SCROLL TO TOP */}
             <AnimatePresence>

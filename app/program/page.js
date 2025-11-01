@@ -1,10 +1,8 @@
 'use client';
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Hero from "../components/Hero.js";
-import '../style/_home.css';
-import './_program.css';
+import "./_program.css";
 
 export default function CombinedProgramsSection() {
     const programs = [
@@ -12,10 +10,9 @@ export default function CombinedProgramsSection() {
             title: 'Infants',
             age: '6 months – 1.5 years',
             emoji: '👶',
-            img: '/images/infant1.png',
-            color: '#A8DADC',
+            img: '/images/toddler.png',
             highlights: [
-                "Sensory & Motor Development: Tummy time, soft toys, textures, and basic movements.",
+                "Sensory & Motor Development: Tummy time, soft toys, textures, basic movements.",
                 "Music & Rhythm: Simple lullabies, clapping games, and gentle songs.",
                 "Bonding & Emotional Security: Parent-child interactive sessions, gentle routines."
             ],
@@ -25,8 +22,7 @@ export default function CombinedProgramsSection() {
             title: 'Toddlers',
             age: '1.5 – 3 years',
             emoji: '🍼',
-            img: '/images/toodler.png',
-            color: '#FFD6A5',
+            img: '/images/melora_happy1.jpg',
             highlights: [
                 "Early Learning: Colors, shapes, numbers, simple words.",
                 "Creative Play: Finger painting, simple crafts, imaginative play.",
@@ -40,7 +36,6 @@ export default function CombinedProgramsSection() {
             age: '2.5 – 3.5 years',
             emoji: '🧩',
             img: '/images/pre-nursery.png',
-            color: '#FFADAD',
             highlights: [
                 "Pre-Reading & Early Math: Letter recognition, counting 1–10, matching games.",
                 "Arts & Crafts: Simple drawing, coloring, and clay modeling.",
@@ -54,7 +49,6 @@ export default function CombinedProgramsSection() {
             age: '3.5 – 5 years',
             emoji: '📚',
             img: '/images/nursery.png',
-            color: '#9BF6FF',
             highlights: [
                 "Literacy & Language Programs: Phonics, storytelling, vocabulary building.",
                 "Math & Cognitive Development: Numbers, shapes, patterns, basic problem-solving.",
@@ -69,7 +63,6 @@ export default function CombinedProgramsSection() {
             age: '5+ years / school-going children',
             emoji: '🏫',
             img: '/images/afterSchool.png',
-            color: '#FFC6FF',
             highlights: [
                 "Enrichment Activities: STEM, robotics, coding for kids, creative writing.",
                 "Sports & Physical Activities: Yoga, martial arts, dance, team sports.",
@@ -80,9 +73,6 @@ export default function CombinedProgramsSection() {
         }
     ];
 
-    const fadeSlideLeft = { hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8 } } };
-    const fadeSlideRight = { hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8 } } };
-
     return (
         <section className="combined-programs-section">
             <Hero
@@ -92,39 +82,48 @@ export default function CombinedProgramsSection() {
 
             <div className="programs-grid">
                 {programs.map((program, idx) => (
-                    <motion.div
-                        className="program-card"
-                        key={idx}
-                        style={{ backgroundColor: program.color + '20' }}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                    >
-                        <motion.div className="program-image" variants={idx % 2 === 0 ? fadeSlideLeft : fadeSlideRight}>
+                    <div className="program-card" key={idx}>
+                        <div className="program-image">
                             <Image
                                 src={program.img}
                                 alt={program.title}
-                                width={500}
-                                height={350}
+                                width={550}
+                                height={380}
                                 style={{ borderRadius: '12px', objectFit: 'cover' }}
                             />
-                        </motion.div>
+                        </div>
 
-                        <motion.div className="program-text" variants={idx % 2 === 0 ? fadeSlideRight : fadeSlideLeft}>
+                        <div className="program-text">
                             <h3>{program.title} <span className="emoji">{program.emoji}</span></h3>
                             <p className="program-age">{program.age}</p>
 
                             <ul>
-                                {program.highlights.map((item, i) => <li key={i}>{item}</li>)}
+                                {program.highlights.map((item, i) => (
+                                    <li key={i}>{item}</li>
+                                ))}
                             </ul>
 
                             <div className="program-schedules">
                                 {program.schedules.map((sched, i) => (
-                                    <span className="schedule-badge" key={i}>{sched}</span>
+                                    <span
+                                        className="schedule-badge"
+                                        key={i}
+                                        data-info={
+                                            sched === "Half Day"
+                                                ? "🌅 Ideal for little explorers! Morning activities, circle time, and creative play till noon."
+                                                : sched === "Full Day"
+                                                    ? "🌞 A complete learning journey — play, learning, lunch, nap, art, and outdoor time."
+                                                    : sched === "Extended Day"
+                                                        ? "🌙 Perfect for working parents — includes enrichment sessions, evening snacks & calm-down time."
+                                                        : "🕒 Flexible schedule to suit your child’s needs."
+                                        }
+                                    >
+                                        {sched}
+                                    </span>
                                 ))}
                             </div>
-                        </motion.div>
-                    </motion.div>
+                        </div>
+                    </div>
                 ))}
             </div>
         </section>

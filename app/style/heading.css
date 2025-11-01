@@ -1,0 +1,63 @@
+/* headings.css - global heading styles */
+h1, h2, h3, h4, h5, h6 {
+    margin: 1rem 0;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        color: #2b6cb0;
+    }
+
+    h2 {
+        color: #2b6cb0;
+    }
+
+    h3 {
+        color: #2b6cb0;
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+}
+
+h1 {
+    font-family: 'Baloo 2', cursive;
+    color: #721c24;
+    font-weight: 900;
+}
+
+h2 {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    color: #2b6cb0;
+    margin: 2rem 0;
+    text-align: center;
+
+}
+
+h3 {
+    font-family: 'Comic Neue', cursive;
+}
+
+p {
+    font-family: inherit;
+}
+
+

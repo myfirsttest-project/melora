@@ -1,171 +1,199 @@
-/* ================= PROGRAMS + SCHEDULE (Premium Layout) ================= */
+/* ================= PROGRAMS + SCHEDULE ================= */
 .combined-programs-section {
-  background: #f8fbff;
+    background: #f8fbff;
+    padding: 0rem 0;
 
-  /* Grid layout for cards: 2 per row on desktop */
-  .programs-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
-    max-width: 2225px; /* 15% wider */
-    margin: 0 auto;
-  }
-
-  /* Individual program card */
-  .program-card {
-    display: flex;
-    gap: 3rem;
-    padding: 3rem;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #ffffff, #f0f8ff);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
-
-    &:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
-      background: linear-gradient(135deg, #ffffff, #e0f2ff);
-    }
-
-    /* Program image */
-    .program-image {
-      flex: 1;
-      max-width: 500px;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.05);
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 12px;
-        transition: transform 0.3s ease, filter 0.3s ease;
-      }
-
-      &:hover img {
-        transform: scale(1.05);
-        filter: brightness(1.05);
-      }
-    }
-
-    /* Program text */
-    .program-text {
-      flex: 2;
-      max-width: 650px;
-
-      h3 {
-        font-size: 2rem;
-        color: #2b6cb0;
-        margin-bottom: 0.5rem;
-      }
-
-      .emoji {
-        margin-left: 0.5rem;
-        font-size: 2rem;
-      }
-
-      .program-age {
-        color: #ff6b6b;
-        font-weight: 600;
-        margin-bottom: 1rem;
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 1rem;
-
-        li {
-          margin-bottom: 0.8rem;
-          line-height: 1.7;
-          position: relative;
-          padding-left: 1.6rem;
-          font-size: 1rem;
-
-          &:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #ff6b6b;
-            font-size: 1.3rem;
-          }
-        }
-      }
-
-      /* Schedule badges */
-      .program-schedules {
-        display: flex;
-        gap: 0.8rem;
-        flex-wrap: wrap;
-        margin-top: 1.5rem;
-
-        .schedule-badge {
-          background: #ff6b6b20;
-          color: #ff6b6b;
-          font-weight: 600;
-          padding: 0.6rem 1.2rem;
-          border-radius: 50px;
-          font-size: 1rem;
-          transition: all 0.3s ease;
-
-          &:hover {
-            background: #ff6b6b;
-            color: #fff;
-            cursor: pointer;
-          }
-        }
-      }
-    }
-  }
-
-  /* ================= RESPONSIVE ================= */
-  @media (max-width: 1024px) {
     .programs-grid {
-      grid-template-columns: 1fr;
-      gap: 3rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3.5rem;
+        max-width: 2225px;
+        margin: 0 auto;
     }
 
     .program-card {
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-      gap: 2rem;
+        display: flex;
+        gap: 3rem;
+        padding: 3.5rem;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #ffffff, #f0f8ff);
+        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+        transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
 
-      .program-image {
-        max-width: 90%;
-      }
+        &:hover {
+            transform: translateY(-10px) scale(1.04);
+            box-shadow: 0 25px 55px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #ffffff, #e0f2ff);
+        }
 
-      .program-text {
-        max-width: 100%;
-      }
+        /* Program image */
+        .program-image {
+            flex: 1.2;
+            max-width: 600px; /* increased image width */
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 12px;
+                transition: transform 0.3s ease, filter 0.3s ease;
+            }
+
+            &:hover img {
+                transform: scale(1.05);
+                filter: brightness(1.07);
+            }
+        }
+
+        /* Program text */
+        .program-text {
+            flex: 2;
+            max-width: 700px;
+            text-align: left; /* align everything left */
+
+            h3 {
+                font-size: 2.6rem;
+                color: #2b6cb0;
+                margin-bottom: 0.6rem;
+                font-weight: 700;
+            }
+
+            .emoji {
+                margin-left: 0.4rem;
+                font-size: 2.6rem;
+            }
+
+            .program-age {
+                color: #ff6b6b;
+                font-weight: 600;
+                font-size: 1.3rem;
+                margin-bottom: 1.3rem;
+                text-align: left; /* aligned age text */
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin-bottom: 1.5rem;
+
+                li {
+                    margin-bottom: 0.6rem; /* reduced line gap */
+                    line-height: 1.5; /* tighter spacing */
+                    position: relative;
+                    padding-left: 1.6rem;
+                    font-size: 1.2rem;
+
+                    &:before {
+                        content: "•";
+                        position: absolute;
+                        left: 0;
+                        color: #ff6b6b;
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+
+            /* Schedule badges */
+            .program-schedules {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                margin-top: 1.5rem;
+
+                .schedule-badge {
+                    position: relative;
+                    background: #ff6b6b20;
+                    color: #ff6b6b;
+                    font-weight: 600;
+                    padding: 0.8rem 1.4rem;
+                    border-radius: 50px;
+                    font-size: 1.1rem;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #ff6b6b;
+                        color: #fff;
+                    }
+
+                    /* Tooltip styling */
+                    &::after {
+                        content: attr(data-info);
+                        position: absolute;
+                        bottom: 130%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background: rgba(43, 108, 176, 0.95);
+                        color: #fff;
+                        font-size: 1rem;
+                        padding: 0.7rem 1rem;
+                        border-radius: 10px;
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: opacity 0.3s ease, transform 0.3s ease;
+                        white-space: nowrap;
+                    }
+
+                    &:hover::after {
+                        opacity: 1;
+                        transform: translateX(-50%) translateY(-5px);
+                    }
+                }
+            }
+        }
     }
-  }
 
-  @media (max-width: 480px) {
-    .program-card {
-      padding: 2rem;
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 1024px) {
+        .programs-grid {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
 
-      .program-text h3 {
-        font-size: 1.6rem;
-      }
+        .program-card {
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            gap: 2.5rem;
 
-      .program-text .emoji {
-        font-size: 1.6rem;
-      }
+            .program-image {
+                max-width: 95%;
+            }
 
-      .program-text .program-age {
-        font-size: 0.95rem;
-      }
-
-      .program-text ul li {
-        font-size: 0.95rem;
-      }
-
-      .program-schedules .schedule-badge {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.9rem;
-      }
+            .program-text {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
     }
-  }
+
+    @media (max-width: 480px) {
+        .program-card {
+            padding: 2.5rem;
+
+            .program-text h3 {
+                font-size: 2.2rem;
+            }
+
+            .program-text .emoji {
+                font-size: 2.2rem;
+            }
+
+            .program-text .program-age {
+                font-size: 1.1rem;
+            }
+
+            .program-text ul li {
+                font-size: 1.05rem;
+            }
+
+            .program-schedules .schedule-badge {
+                font-size: 0.95rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+    }
 }

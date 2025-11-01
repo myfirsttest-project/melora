@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import Image from 'next/image';
 import {sendEmail} from './util/emailService';
 import '../style/_home.css';
+import '../style/heading.css';
 import heroImg from "../../public/images/home_page.png";
 
 const HeroSection = () => {
@@ -47,7 +48,7 @@ const HeroSection = () => {
                     <div className="hero-text" >
                         <h1>Shaping Little Minds with Big Hearts 💕</h1>
                         <p>Where learning is joyful, caring, and creative — every single day.</p>
-                        <a href="/events" className="btn secondary">Open Gallery</a>
+                        <a href="/events-and-activities" className="btn secondary">Learn More</a>
                     </div>
                     <div className="hero-form-container" >
                         <div className="hero-form">

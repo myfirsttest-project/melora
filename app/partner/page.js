@@ -1,9 +1,10 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../style/_contact.css";
-import {sendEmail} from "../components/util/emailService";
+import { sendEmail } from "../components/util/emailService";
 import Image from "next/image";
 import Hero from "../components/Hero";
+import { Star, Handshake, Briefcase, Rocket } from "lucide-react"; //
 
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID;
 const PARTNER_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_ADMISSION_TEMPLATE_ID_PARENT;
@@ -16,11 +17,10 @@ export default function PartnerPage() {
         contactPerson: "",
         mobile: "",
         email: "",
-        message: ""
+        message: "",
     });
-    const handleChange = (e) => {
-        setFormData({...formData, [e.target.name]: e.target.value});
-    };
+
+    const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -34,15 +34,15 @@ export default function PartnerPage() {
 
         try {
             await sendEmail(templateParams, TEMPLATE_ID);
-            await sendEmail({...formData, recipientEmail: formData.email}, PARTNER_TEMPLATE);
+            await sendEmail({ ...formData, recipientEmail: formData.email }, PARTNER_TEMPLATE);
 
-            setStatus("✅ Thanks for contacting, we will connect with you shortly");
+            setStatus("✅ Thanks for contacting us — we’ll connect with you shortly!");
             setFormData({
                 companyName: "",
                 contactPerson: "",
                 mobile: "",
                 email: "",
-                message: ""
+                message: "",
             });
         } catch (err) {
             console.error(err);
@@ -54,39 +54,60 @@ export default function PartnerPage() {
 
     return (
         <main className="contact-wrapper">
-            <section className="contact-hero">
-                <Hero
-                    title="Become a Partner with Melora"
-                    description="We welcome organizations and individuals to collaborate with us. Fill the form below to join
-                    hands!"
-                />
-            </section>
-            <section className="contact-content">
-                <div className="contact-info">
-                    <section className="partner-hero-image" style={{
-                        textAlign: "center",
-                        margin: "0rem 0",
-                        position: "relative",
-                        height: "99%",
-                        width: "99%"
-                    }}>
+            {/* ===== HERO ===== */}
+            <Hero
+                title="Become a Partner with Melora"
+                description="Join hands with Melora to build a nurturing, creative, and future-ready learning ecosystem."
+            />
+
+            {/* ===== MAIN CONTENT ===== */}
+            <section className="partner-content">
+                {/* LEFT SIDE — INFO */}
+                <div className="partner-info">
+                    <h3 className="partner-heading">Collaborate. Grow. Inspire.</h3>
+
+                    <div className="partner-image-wrapper">
                         <Image
                             src="/images/handshake.png"
                             alt="Partner with Melora"
-                            fill // makes the image fill the parent div
-                            style={{objectFit: "cover", borderRadius: "15px"}}
+                            fill
+                            style={{ objectFit: "cover", borderRadius: "18px" }}
                             priority
                         />
-                        <h3>Contact Information</h3>
+                    </div>
 
-                        <p>📍 Plot# 50, Iris Avenue, Sector 83, Gurugram, Haryana 122004</p>
-                        <p>📞 (+91) 96671 17642</p>
-                        <p>📧 info@meloraplayschool.in</p>
-                    </section>
+                    <div className="partner-text">
+                        <p>
+                            Melora invites individuals and organizations who share our passion for education
+                            and child development to collaborate with us.
+                        </p>
 
+                        <h4>Why Partner With Melora?</h4>
+                        <ul className="partner-benefits">
+                            <li>
+                                <Star className="benefit-icon" /> Empower young learners through quality education
+                            </li>
+                            <li>
+                                <Handshake className="benefit-icon" /> Build long-term collaborations with shared values
+                            </li>
+                            <li>
+                                <Briefcase className="benefit-icon" /> Co-create events, workshops, and initiatives
+                            </li>
+                            <li>
+                                <Rocket className="benefit-icon" /> Strengthen your brand through meaningful impact
+                            </li>
+                        </ul>
+
+                        <p className="partner-cta">
+                            Together, we can nurture creativity, confidence, and curiosity — one child at a time.
+                        </p>
+                    </div>
                 </div>
 
+                {/* RIGHT SIDE — FORM */}
                 <form className="contact-form" onSubmit={handleSubmit}>
+                    <h3>Partner Inquiry Form</h3>
+
                     <label>
                         Company/Organization Name
                         <input

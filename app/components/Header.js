@@ -12,8 +12,7 @@ export default function Header() {
         { name: "About", href: "/about" },
         { name: "Program", href: "/program" },
         { name: "Admission", href: "/admission" },
-        { name: "Events", href: "/events-and-activities" },
-        { name: "Contact", href: "/contact" },
+        { name: "Events", href: "/events-and-activities" }
     ];
 
     return (

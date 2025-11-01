@@ -1,0 +1,81 @@
+/* ================================
+   PROGRAMS SECTION
+================================ */
+
+.program-cards-home {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem 1rem;
+    width: 100%;
+   }
+
+.program-cards-home1 {
+    border-radius: 25px;
+    background: linear-gradient(145deg, #ffffff, #f0f6fa); /* Bright subtle gradient */
+    box-shadow: 0 8px 18px rgba(0, 107, 161, 0.15); /* Soft blue shadow matching theme */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1.2rem;
+    width: 400px; /* Slightly smaller for uniform height */
+    text-align: center;
+}
+
+.program-cards-home1:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 22px rgba(0, 107, 161, 0.25);
+}
+
+.program-cards-home1 img {
+    border-radius: 12px;
+    height: 350px; /* Uniform height for all program images */
+    width: 100%;
+    object-fit: cover;
+}
+
+.program-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.program-cards-home1 h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #006ba1; /* Blueish color matching footer */
+    margin: 0;
+}
+
+.program-icon {
+    font-size: 2.2rem;
+    margin: 0;
+    color: #006ba1; /* Blueish icon */
+}
+
+.age {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.description-main {
+    font-size: 1.4rem;
+    color: #555;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .program-cards-home1 {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .program-cards-home1 {
+        width: 100%;
+    }
+}

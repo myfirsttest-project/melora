@@ -1,157 +1,144 @@
-"use client";
+'use client';
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import Hero from "../components/Hero";
 import "../style/_about.css";
+import Hero from "../components/Hero";
 
 const highlights = [
-    { title: "Experienced Educators", desc: "Passionate teachers guiding each child with personalized attention." },
-    { title: "Play-Based Learning", desc: "Learning through discovery, creativity, and structured activities." },
-    { title: "Safe Environment", desc: "Secure and stimulating spaces for children to explore and grow." },
-    { title: "Holistic Development", desc: "Focus on cognitive, emotional, and physical growth of every child." },
+    {
+        title: "Experienced Educators",
+        desc: "Passionate teachers providing personalized attention to each child."
+    },
+    {
+        title: "Play-Based Learning",
+        desc: "Encouraging exploration, creativity, and structured discovery."
+    },
+    {
+        title: "Safe Environment",
+        desc: "Secure and stimulating spaces where children feel confident to explore."
+    },
+    {
+        title: "Holistic Development",
+        desc: "Supporting the cognitive, emotional, social, and physical growth of every child."
+    },
+];
+
+const visionParagraphs = [
+    "Our vision is to nurture confident, creative, and compassionate children who are prepared to thrive in a rapidly evolving world.",
+    "We aim to foster a love of learning, a strong sense of empathy, and the skills necessary for lifelong growth."
+];
+
+const missionParagraphs = [
+    "Our mission is to provide a nurturing, stimulating, and safe environment where every child’s holistic development is supported — academically, emotionally, socially, and physically.",
+    "We encourage curiosity, independence, creativity, and resilience, empowering children to grow into well-rounded, confident individuals."
+];
+
+const founderParagraphs = [
+    "My journey with Melora began with a simple belief: early education should awaken a child’s curiosity, creativity, and confidence.",
+    "With over 15 years of experience in the education sector, I have witnessed how the right environment can transform a child’s approach to learning and life.",
+    "Melora was founded to create a nurturing space where children feel valued, supported, and inspired — not only to excel academically but also to grow into kind, confident, and capable individuals ready to thrive in the world."
+];
+
+const ourStoryParagraphs = [
+    "Melora was born from a dream nurtured for over a decade: to create a place where early learning feels joyful, meaningful, and deeply human.",
+    "During my time in Norway, I discovered a kindergarten philosophy rooted in care, curiosity, and respect for every child. It inspired me to bring the same principles to India — nurturing not only knowledge but also character, confidence, and emotional well-being.",
+    "With more than 15 years in education, I have dedicated my life to shaping a space where children grow through play, exploration, and wonder.",
+    "At Melora, we follow the Norwegian approach, fostering independence, kindness, and creativity so every child can flourish and step into the world with joy and confidence."
 ];
 
 export default function About() {
-    const fadeVariant = {
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-    };
-
     return (
         <main className="about-wrapper">
-            {/* HERO */}
-            <section className="about-hero">
                 <Hero
                     title="About Melora"
                     description="Inspiring the next generation through joyful learning and meaningful growth."
                 />
-            </section>
 
-            {/* OUR VISION & GOALS */}
-            <motion.section
-                className="about-section"
-                variants={fadeVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-            >
+            <section className="about-section fade-in">
+                <div className="section-image">
+                    <Image
+                        src="/images/vision.jpg"
+                        alt="Our Vision"
+                        width={500}
+                        height={250}
+                        style={{borderRadius: "12px", objectFit: "cover"}}
+                    />
+                </div>
                 <div className="section-text">
                     <h2>Our Vision & Goals</h2>
-                    <p>
-                        At Melora, our vision is to nurture confident, creative, and compassionate
-                        children who are prepared to thrive in a rapidly changing world.
-                    </p>
-                    <ul>
+                    {visionParagraphs.map((p, i) => <p key={i}>{p}</p>)}
+                    <p>The goals for children in our program are for them to:</p>
+                    <ul className="bullet-list">
                         <li>Be active and engaged learners.</li>
-                        <li>Feel safe and secure when parents leave.</li>
-                        <li>Develop confidence and independence.</li>
-                        <li>Appreciate diversity and teamwork.</li>
+                        <li>Feel safe & secure when parents leave.</li>
+                        <li>Develop positive relationships, self-confidence, and independence.</li>
+                        <li>Appreciate cultural diversity.</li>
                         <li>Have fun while learning!</li>
                     </ul>
                 </div>
-                <div className="section-image small">
-                    <Image
-                        src="/images/goal.webp"
-                        alt="Our Vision"
-                        fill
-                        style={{ objectFit: "cover", borderRadius: "12px" }}
-                        sizes="(max-width: 768px) 100vw, 40vw"
-                    />
-                </div>
-            </motion.section>
+            </section>
 
-            {/* OUR MISSION */}
-            <motion.section
-                className="about-section reverse"
-                variants={fadeVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-            >
-                <div className="section-image small">
+            {/* MISSION */}
+            <section className="about-section fade-in">
+                <div className="section-image">
                     <Image
                         src="/images/mission.webp"
                         alt="Our Mission"
-                        fill
-                        style={{ objectFit: "cover", borderRadius: "12px" }}
-                        sizes="(max-width: 768px) 100vw, 40vw"
+                        width={500}
+                        height={250}
+                        style={{borderRadius: "12px", objectFit: "cover"}}
                     />
                 </div>
                 <div className="section-text">
                     <h2>Our Mission</h2>
-                    <p>
-                        We strive to create a nurturing and stimulating environment that supports the
-                        holistic development of every child — academically, emotionally, socially,
-                        and physically.
-                    </p>
-                    <ul>
-                        <li>Deliver high-quality, child-centered education</li>
-                        <li>Foster curiosity and creativity</li>
-                        <li>Encourage emotional intelligence</li>
-                        <li>Promote resilience and independence</li>
+                    {missionParagraphs.map((p, i) => <p key={i}>{p}</p>)}
+                    <ul className="bullet-list">
+                        <li>Deliver high-quality, student-centered education</li>
+                        <li>Foster curiosity, creativity, and critical thinking</li>
+                        <li>Promote emotional and social intelligence</li>
+                        <li>Encourage independence and resilience</li>
                     </ul>
                 </div>
-            </motion.section>
+            </section>
 
             {/* WHY CHOOSE US */}
-            <motion.section
-                className="about-section"
-                variants={fadeVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-            >
+            <section className="about-section fade-in">
+                <div className="section-image">
+                    <Image
+                        src="/images/philosphy.webp"
+                        alt="Why Choose Us"
+                        width={500}
+                        height={250}
+                        style={{borderRadius: "12px", objectFit: "cover"}}
+                    />
+                </div>
                 <div className="section-text">
                     <h2>Why Choose Melora?</h2>
                     <div className="highlights-grid">
                         {highlights.map((item, idx) => (
-                            <div key={idx} className="highlight-card">
+                            <div className="highlight-card" key={idx}>
                                 <h4>{item.title}</h4>
                                 <p>{item.desc}</p>
                             </div>
                         ))}
                     </div>
                 </div>
-                <div className="section-image small">
-                    <Image
-                        src="/images/philosphy.webp"
-                        alt="Why Choose Us"
-                        fill
-                        style={{ objectFit: "cover", borderRadius: "12px" }}
-                        sizes="(max-width: 768px) 100vw, 40vw"
-                    />
-                </div>
-            </motion.section>
+            </section>
 
             {/* OUR LEADER */}
-            <motion.section
-                className="about-section reverse"
-                variants={fadeVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-            >
-                <div className="section-image small">
+            <section className="about-section">
+                <div className="section-image">
                     <Image
                         src="/images/sumita1.png"
                         alt="Founder"
-                        fill
-                        style={{ objectFit: "cover", borderRadius: "12px" }}
-                        sizes="(max-width: 768px) 100vw, 40vw"
+                        width={500}
+                        height={250}
+                        style={{borderRadius: "12px", objectFit: "cover"}}
                     />
                 </div>
                 <div className="section-text">
                     <h2>Our Leader</h2>
-                    <p>
-                        Melora was founded by <strong>Sumita Gunwal</strong> — an educator with over
-                        15 years of experience. Her vision is to make early learning joyful,
-                        nurturing, and meaningful.
-                    </p>
-                    <p>
-                        Her passion for child development and holistic growth shapes every aspect of
-                        Melora — creating a safe, inspiring space where children flourish.
-                    </p>
+                    {founderParagraphs.map((p, i) => <p key={i}>{p}</p>)}
                     <h4>Sumita Gunwal — Founder</h4>
                     <Image
                         src="/images/signature.png"
@@ -160,35 +147,25 @@ export default function About() {
                         height={50}
                     />
                 </div>
-            </motion.section>
+            </section>
 
             {/* OUR STORY */}
-            <motion.section
-                className="about-section"
-                variants={fadeVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-            >
-                <div className="section-text">
-                    <h2>Our Story</h2>
-                    <p>
-                        Melora was born from a dream to create a place where early learning feels
-                        natural, joyful, and deeply human. Inspired by the Norwegian kindergarten
-                        philosophy, we focus on care, curiosity, and respect for every child —
-                        nurturing knowledge, confidence, and emotional intelligence.
-                    </p>
-                </div>
-                <div className="section-image small">
+            <section className="about-section">
+                <div className="section-image">
                     <Image
-                        src="/images/meloraKids3.jpeg"
+                        src="/images/about1.jpg"
                         alt="Our Story"
-                        fill
-                        style={{ objectFit: "cover", borderRadius: "12px" }}
-                        sizes="(max-width: 768px) 100vw, 40vw"
+                        width={500}
+                        height={250}
+                        style={{borderRadius: "12px", objectFit: "cover"}}
                     />
                 </div>
-            </motion.section>
+                <div className="section-text">
+                    <h2>Our Story</h2>
+                    {ourStoryParagraphs.map((p, i) => <p key={i}>{p}</p>)}
+                </div>
+            </section>
+
         </main>
     );
 }

@@ -1,6 +1,6 @@
 'use client';
 import React from "react";
-import '../style/_melora-ui.css';
+import '../style/_header-footer.css';
 
 function Hero({
                   title,

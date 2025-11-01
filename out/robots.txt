@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://meloraplayschool.in
+
+# Sitemaps
+Sitemap: https://meloraplayschool.in/sitemap.xml
