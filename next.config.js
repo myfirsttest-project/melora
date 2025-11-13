@@ -1,14 +1,27 @@
 const path = require("path");
+const withPWA = require("next-pwa")({
+    dest: "public",
+    register: true,
+    skipWaiting: true,
+    disable: process.env.NODE_ENV === "development",
+    buildExcludes: [/\/_next\//], // <-- ignore _next files
+    fallbacks: {
+        document: "/offline.html",    // offline fallback
+    },
+    additionalManifestEntries: [
+        { url: "/index.html", revision: "1" },
+        { url: "/", revision: "1" },
+        { url: "/event/index.html", revision: "1" },
+        { url: "/about/index.html", revision: "1" },
+        { url: "/program/index.html", revision: "1" },
+        { url: "/admission/index.html", revision: "1" },
+    ],
+});
+
 
 const nextConfig = {
-    outputFileTracingRoot: path.join(__dirname),
-
-    images: {
-        unoptimized: true,
-        domains: [], // add any external domains if used
-        qualities: [75, 80, 85, 90, 95, 100], // include all qualities you use
-    },
-
+    output: "export",
+    images: { unoptimized: true },
     webpack: (config) => {
         config.watchOptions = {
             poll: 1000,
@@ -16,7 +29,7 @@ const nextConfig = {
         };
         return config;
     },
-    output: 'export',
+    outputFileTracingRoot: path.join(__dirname),
 };
 
-module.exports = nextConfig;
+module.exports = withPWA(nextConfig);
