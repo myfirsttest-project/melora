@@ -22,6 +22,7 @@ const withPWA = require("next-pwa")({
 
 const nextConfig = {
     output: "export",
+    trailingSlash: true,   // ✅ ADD THIS
     images: { unoptimized: true },
     webpack: (config) => {
         config.watchOptions = {
