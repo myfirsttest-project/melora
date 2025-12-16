@@ -4,7 +4,145 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1eae0486-5dc3-48a6-99c8-28075d8af6a0" name="Changes" comment="" />
+    <list default="true" id="1eae0486-5dc3-48a6-99c8-28075d8af6a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/GoogleAnalytics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/AspTD7et7psxkSL9OfQtW/_buildManifest.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/AspTD7et7psxkSL9OfQtW/_ssgManifest.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/18-bec4e3b4d205a9e9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/239-3c17a6d641bde0df.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/255-5d038f43a4c9d328.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/4bd1b696-c023c6e3521b1417.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/764.a358f2f221041a85.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/839-6929e69b2a8a3362.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/8e1d74a4-efe043c1f1b6cc86.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/app/_not-found/page-9a47dee605811b6d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/app/about/page-52ab44a3d58833ef.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/app/admission/page-75a1f537a3c144e5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/app/api/admission/route-22d3326644b5e9c3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/app/api/contact/route-22d3326644b5e9c3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/app/contact/page-7b83ec59bd4dbf86.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/app/event/page-8f81461ff0068a6a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/app/layout-4dd7fac99c36988e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/app/page-7ae60431f1d581a9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/app/partner/page-1dda70e6a8075dd4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/app/program/page-a07697a20653615c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/framework-acd67e14855de5a2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/main-9429b43ece09c71c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/main-app-17b81fa30e537f78.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/pages/_app-7d307437aca18ad4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/pages/_error-cb2a52f75f2162e2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/polyfills-42372ed130431b0a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/chunks/webpack-4d8b714376dfae0a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/css/45fdb2ad5c82d997.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/css/4ac76d3ad5362c25.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/css/5577fb71e6bbdf0c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/css/74215114278845f6.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/css/74424b865e2833a1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/css/862ed1ce816fa23a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/css/bbbf2e2007c58d47.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/css/e359557f6ff0b07c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/media/home_page.a0577648.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/media/infant.d93e1f23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/media/kids1.e4bf401c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/media/kids2.b383421d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/media/kids4.49f996ea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/media/lkg.971c8f47.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/media/melora_happy1.e2db96b0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/media/outside.3e5b1fc7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/media/painting.fed3e4bd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/media/sports_Melora.73381413.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/_next/static/media/yellowDay.feffe983.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/about.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/admission.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/admission.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/contact.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/event.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/event.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/fallback-AspTD7et7psxkSL9OfQtW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/file.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/globe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/BT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/Spient.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/about1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/afterSchool.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/christmas2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/classroom.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/diwali.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/handshake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/happy_melora.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/home_page.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/infant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/infant1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/kidSchool.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/kids1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/kids2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/kids3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/kids4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/lkg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/melora-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/melora-512x512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/melora.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/meloraClass1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/meloraHappy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/meloraKids3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/melora_happy1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/mission.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/movie_melora.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/nursery.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/outside.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/painting.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/parents.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/partner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/partner1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/partner5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/philosphy.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/pre-nursery.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/pwc-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/pwc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/santa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/sapient.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/signature.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/sports2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/sports3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/sports4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/sports6.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/sports_Melora.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/sumita1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/toddler.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/trip1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/trip2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/vision.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/images/yellowDay.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/index.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/next.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/offline.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/partner.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/partner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/program.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/program.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/sitemap-0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/sitemap.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/sw.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/vercel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/window.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/workbox-4754cb34.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fallback-AspTD7et7psxkSL9OfQtW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sitemap-0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap-0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/sw.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,8 +258,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
       </set>
     </attachedChunks>
   </component>
@@ -149,6 +287,9 @@
       <workItem from="1761640276571" duration="811000" />
       <workItem from="1762762629433" duration="1371000" />
       <workItem from="1762877399185" duration="629000" />
+      <workItem from="1763972134034" duration="1060000" />
+      <workItem from="1763988839649" duration="602000" />
+      <workItem from="1765715107359" duration="4606000" />
     </task>
     <servers />
   </component>

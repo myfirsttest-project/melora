@@ -7,5 +7,6 @@ module.exports = {
     password: process.env.EMAIL_USER || '88@Melora',
     emailAddress: process.env.EMAIL_PASS || 'info@meloraplayschool.in',
     smtpHost: process.env.SMTP_HOST || 'smtp.hostinger.com',
-    smtpPort: process.env.EMAIL_PORT || 465
+    smtpPort: process.env.EMAIL_PORT || 465,
+    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID || 'G-9N2DS1RYLG'
 }
