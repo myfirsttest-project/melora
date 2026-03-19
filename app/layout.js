@@ -19,8 +19,7 @@ export default function RootLayout({ children }) {
             <link rel="apple-touch-icon" sizes="192x192" href="/images/melora-192x192.png" />
             <link rel="apple-touch-icon" sizes="152x152" href="/images/melora-152x152.png" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
-            <title></title>
-        </head>
+          </head>
         <body>
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
         <Script id="ga-init" strategy="afterInteractive">

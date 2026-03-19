@@ -1,16 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "../style/_contact.css";
-import { sendEmail } from "../components/util/emailService";
+import {sendEmail} from "../components/util/emailService";
 import Image from "next/image";
 import Hero from "../components/Hero";
-import { Star, Handshake, Briefcase, Rocket } from "lucide-react"; //
+import {Star, Handshake, Briefcase, Rocket} from "lucide-react";
+import {getPartnerInquiryHTML, getReturnMessageHTML} from "../components/util/emailTemplates"; //
 
-const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID;
-const PARTNER_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_ADMISSION_TEMPLATE_ID_PARENT;
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID_RETURN;
+const PARTNER_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_ADMISSION_TEMPLATE_ID_PARTNER;
 
 export default function PartnerPage() {
-    const [status, setStatus] = useState("");
+    const [status, setStatus] = useState(null);
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         companyName: "",
@@ -18,6 +19,7 @@ export default function PartnerPage() {
         mobile: "",
         email: "",
         message: "",
+        type: "partner",
     });
 
     const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,9 +35,9 @@ export default function PartnerPage() {
         };
 
         try {
-            await sendEmail(templateParams, TEMPLATE_ID);
-            await sendEmail({ ...formData, recipientEmail: formData.email }, PARTNER_TEMPLATE);
 
+            //await sendEmail(templateParams, PARTNER_TEMPLATE);
+            await sendEmail({ ...formData, recipientEmail: formData.email,year: new Date().getFullYear() }, PARTNER_TEMPLATE);
             setStatus("✅ Thanks for contacting us — we’ll connect with you shortly!");
             setFormData({
                 companyName: "",
@@ -43,6 +45,8 @@ export default function PartnerPage() {
                 mobile: "",
                 email: "",
                 message: "",
+                year: new Date().getFullYear(),
+                time: new Date().toLocaleString(),
             });
         } catch (err) {
             console.error(err);
@@ -71,7 +75,7 @@ export default function PartnerPage() {
                             src="/images/handshake.png"
                             alt="Partner with Melora"
                             fill
-                            style={{ objectFit: "cover", borderRadius: "18px" }}
+                            style={{objectFit: "cover", borderRadius: "18px"}}
                             priority
                         />
                     </div>
@@ -85,16 +89,16 @@ export default function PartnerPage() {
                         <h4>Why Partner With Melora?</h4>
                         <ul className="partner-benefits">
                             <li>
-                                <Star className="benefit-icon" /> Empower young learners through quality education
+                                <Star className="benefit-icon"/> Empower young learners through quality education
                             </li>
                             <li>
-                                <Handshake className="benefit-icon" /> Build long-term collaborations with shared values
+                                <Handshake className="benefit-icon"/> Build long-term collaborations with shared values
                             </li>
                             <li>
-                                <Briefcase className="benefit-icon" /> Co-create events, workshops, and initiatives
+                                <Briefcase className="benefit-icon"/> Co-create events, workshops, and initiatives
                             </li>
                             <li>
-                                <Rocket className="benefit-icon" /> Strengthen your brand through meaningful impact
+                                <Rocket className="benefit-icon"/> Strengthen your brand through meaningful impact
                             </li>
                         </ul>
 

@@ -11,15 +11,14 @@ const HeroSection = () => {
     const [loading, setLoading] = useState(false);
 
     const [formData, setFormData] = useState({
-        parentName: "",
+        contactPerson: "",
         mobile: "",
         email: "",
         childAge: "",
         childName: "",
         program: "",
     });
-    const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID;
-    const PARENT_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_ADMISSION_TEMPLATE_ID_PARENT;
+    const PARENT_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_ADMISSION_TEMPLATE_ID;
 
 
     const handleChange = (e) => setFormData({...formData, [e.target.name]: e.target.value});
@@ -29,10 +28,10 @@ const HeroSection = () => {
         setLoading(true);
         const templateParams = {...formData, year: new Date().getFullYear(), recipientEmail: formData.email};
         try {
-            await sendEmail(templateParams, TEMPLATE_ID);
-            await sendEmail({...formData, recipientEmail: formData.email}, PARENT_TEMPLATE);
+            //await sendEmail(templateParams, TEMPLATE_ID);
+            await sendEmail({ ...formData, recipientEmail: formData.email, year: new Date().getFullYear() }, PARENT_TEMPLATE);
             setStatus("✅ Message sent successfully! We'll connect with you soon.");
-            setFormData({parentName: "", mobile: "", childAge: "", childName: "", email: "", program: ""});
+            setFormData({contactPerson: "", mobile: "", childAge: "", childName: "", email: "", program: ""});
         } catch {
             setStatus("❌ Failed to send message. Please try again.");
         } finally {
@@ -58,8 +57,8 @@ const HeroSection = () => {
                                        onChange={handleChange}/>
                                 <input name="childAge" placeholder="Child's Age" required value={formData.childAge}
                                        onChange={handleChange}/>
-                                <input name="parentName" placeholder="Parent's Name" required
-                                       value={formData.parentName} onChange={handleChange}/>
+                                <input name="contactPerson" placeholder="Parent's Name" required
+                                       value={formData.contactPerson} onChange={handleChange}/>
                                 <input type="email" name="email" placeholder="Email" required value={formData.email}
                                        onChange={handleChange}/>
                                 <input type="tel" name="mobile" placeholder="Phone Number" required

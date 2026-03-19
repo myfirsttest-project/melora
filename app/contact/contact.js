@@ -3,22 +3,20 @@ import React, { useState } from "react";
 import "../style/_contact.css";
 import { sendEmail } from "../components/util/emailService";
 import Hero from "../components/Hero";
-
-const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID;
-const PARENT_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_ADMISSION_TEMPLATE_ID_PARENT;
+const PARENT_TEMPLATE = process.env.NEXT_PUBLIC_EMAILJS_ADMISSION_TEMPLATE_ID;
 
 export default function ContactPage() {
     const [status, setStatus] = useState("");
     const [loading, setLoading] = useState(false);
-
     const [formData, setFormData] = useState({
-        parentName: "",
+        contactPerson: "",
         mobile: "",
         email: "",
         childAge: "",
         program: "",
         message: "",
         childName: "",
+        year: new Date().getFullYear(),
     });
 
     const handleChange = (e) => {
@@ -36,21 +34,23 @@ export default function ContactPage() {
         };
 
         try {
-            await sendEmail(templateParams, TEMPLATE_ID);
-            await sendEmail({ ...formData, recipientEmail: formData.email }, PARENT_TEMPLATE);
-
+            console.log("Sending email with params:", templateParams);
+            await sendEmail({ ...formData, recipientEmail: formData.email, year: new Date().getFullYear() }, PARENT_TEMPLATE);
             setStatus("✅ Message sent successfully! We'll connect with you shortly.");
             setFormData({
-                parentName: "",
-                mobile: "",
-                childAge: "",
+                contactPerson: "",
                 childName: "",
-                email: "",
+                childAge: "",
                 program: "",
+                companyName: "",
+                email: "",
+                mobile: "",
                 message: "",
             });
+
         } catch (err) {
-            console.error(err);
+            console.error(":::::::::::::::::::::"+err);
+            console.log(":::::::::::::::::::::"+err);
             setStatus("❌ Failed to send message. Please try again.");
         } finally {
             setLoading(false);
@@ -110,7 +110,7 @@ export default function ContactPage() {
                     </label>
                     <label>
                         Parent Name
-                        <input type="text" name="parentName" value={formData.parentName} onChange={handleChange} required />
+                        <input type="text" name="contactPerson" value={formData.contactPerson} onChange={handleChange}  />
                     </label>
 
                     <label>
